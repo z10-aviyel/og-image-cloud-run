@@ -1,0 +1,24 @@
+{
+  "name": "og-image-worker",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "vite dev",
+    "start": "node .",
+    "gcp-build": "vite build"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.2.0",
+    "react": "^18.2.0",
+    "satori": "^0.0.44",
+    "undici": "^5.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "16",
+    "@types/react": "^18.0.26",
+    "vite": "^4.0.3",
+    "vite-plugin-node": "^1.0.0"
+  }
+}
