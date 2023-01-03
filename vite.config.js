@@ -4,7 +4,6 @@ import { VitePluginNode } from 'vite-plugin-node';
 
 export default defineConfig({
   optimizeDeps: { disabled: true },
-  build: { outDir: 'api' },
   plugins: [
     ...VitePluginNode({
       adapter: 'express',
