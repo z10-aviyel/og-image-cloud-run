@@ -3,11 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "main": "dist/index.js",
   "scripts": {
     "dev": "vite dev",
-    "start": "node .",
-    "gcp-build": "vite build"
+    "build": "vite build"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.2.0",

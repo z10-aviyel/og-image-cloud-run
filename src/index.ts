@@ -1,22 +1,22 @@
-import "./lib/polyfill";
+import './lib/polyfill';
 // import { fetch } from "undici";
-import { createServer, RequestListener } from "http";
+import type { RequestListener } from 'http';
 
-import { OgImage } from "./og";
-import { svg2png } from "./svg/svg2png";
+import { OgImage } from './og';
+import { svg2png } from './svg/svg2png';
 
 const TEST_DATA = {
-  name: "Merchstack",
-  location: "Houston, TX",
-  jobType: "Full-Time",
-  icon: "https://img.icons8.com/fluency/512/twitter.png",
+  name: 'Merchstack',
+  location: 'Houston, TX',
+  jobType: 'Full-Time',
+  icon: 'https://img.icons8.com/fluency/512/twitter.png',
   tags: [
-    "Full-Stack Programming",
-    "Adobe Creative Suite",
-    "HTML / CSS",
-    "Javascript",
-    "PHP",
-    "Wordpress",
+    'Full-Stack Programming',
+    'Adobe Creative Suite',
+    'HTML / CSS',
+    'Javascript',
+    'PHP',
+    'Wordpress',
   ],
 };
 
@@ -27,13 +27,8 @@ const requestHandler: RequestListener = async (req, res) => {
 
   const buffer = await svg2png({ element: OgImage({ data: TEST_DATA }) });
 
-  res.setHeader("Content-Type", "image/png");
+  res.setHeader('Content-Type', 'image/png');
   res.end(buffer);
 };
 
-if (import.meta.env.PROD) {
-  createServer(requestHandler).listen(8080);
-}
-
-// For dev
-export { requestHandler as viteNodeApp };
+export default requestHandler;
